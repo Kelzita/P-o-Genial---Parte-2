@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== REMIXICONS ===============-->
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="../css/style_login.css">
+      <style>
+         /*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+
+      </style>
+      <script> 
+      function VerificarCampos(){
+         const usuario = document.getElementById("usuario").value.trim();
+         const senha = document.getElementById("senha").value.trim();
+
+
+         if (!usuario || !senha) {
+            alert("Preencha todos os campos!")
+         } else {
+            return false 
+         }
+      }
+         
+      </script>
+
+      <title>Login</title>
+   </head>
+   <body>
+      <div class="login">
+         <img src="../img/fundo1.jpg" alt="login image" class="login__img">
+
+         <form action="" class="container">
+            <h1 class="login__title">Login</h1>
+
+            <div class="login__content">
+               <div class="login__box">
+                  <i class="ri-user-3-line login__icon"></i>
+
+                  <div class="login__box-input">
+                     <input type="login-usuario"  class="login__input" id="usuario" placeholder=" ">
+                     <label for="usuario" class="login__label">Usuário</label>
+                  </div>
+               </div>
+
+               <div class="login__box">
+                  <i class="ri-lock-2-line login__icon"></i>
+
+                  <div class="login__box-input">
+                     <input type="password"  class="login__input" id="senha" placeholder=" ">
+                     <label for="senha" class="login__label">Senha</label>
+                     <i class="ri-eye-off-line login__eye" id="login-eye"></i>
+                  </div>
+               </div>
+            </div>
+
+            <div class="login__check">
+               <a href="#" class="login__forgot">Esqueceu a senha?</a>
+            </div>
+
+            <button type="submit" class="login__button" onclick="VerificarCampos()">Login</button>
+         </form>
+      </div>
+      
+   </body>
+</html>
