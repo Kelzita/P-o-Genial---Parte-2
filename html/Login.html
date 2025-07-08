@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--==== Ícones ====-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" >
+    <!--==== Fontes do Google ====-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap">
+    <!--==== CSS - EXTERNO ====-->
+    <link rel="stylesheet" href="../css/style_login.css">
+    <title>Login</title>
+</head> 
+<body>
+    <div class="login">
+        <img src="../img/fundo1.jpg" alt="Fundo da página" class="background"> 
+        <form action="#" method="post" class="formulario-login">
+            <h1 class="titulo-login">Login</h1>
+        
+        <div class="conteudo">
+            <div class="caixa-login">
+                <i class="ri-user-3-line login__icon"></i>
+
+                <div class="caixa-login-input">
+                    <input type="login-usuario" class="login-input" id="usuario">
+                    <label for="usuario" class="login-label">Usuário</label>
+                </div>
+            </div>
+            <div class="caixa-login">
+                <i class="ri-lock-2-line login__icon"></i>
+                <div class="caixa-login-input">
+                    <input type="password" class="login-input" id="senha">
+                    <label for="senha" class="login-label">Senha</label>
+                    <i class="ri-eye-off-line login__eye" id="login-eye"></i>
+                </div>
+            </div>
+        </div>
+        <div class="login__check">
+            <a href="#" class="esqueci-senha-login">Esqueceu a senha?</a>
+        </div>
+        <button type="submit" class="botao-login" onclick="VerificarCampos()">Login</button>
+        </form>
+    </div>
+</body>
+</html>
