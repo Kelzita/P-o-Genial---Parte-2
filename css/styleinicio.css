@@ -1,0 +1,128 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #dcdcdc;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+}
+
+.lateral {
+  width: 250px;
+  background-color: #1e1e1e;
+  color: white;
+  padding: 20px 10px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-item {
+  background: #333;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.menu-item button {
+  width: 100%;
+  background: none;
+  border: none;
+  color: white;
+  text-align: left;
+  padding: 10px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu-item button:hover {
+  background-color: #444;
+}
+
+.submenu {
+  display: none;
+  flex-direction: column;
+  background-color: #2a2a2a;
+}
+
+.submenu a {
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.submenu a:hover {
+  background-color: #444;
+}
+
+.menu-item:has(:focus-within) .submenu,
+.menu-item:hover .submenu {
+  display: flex;
+}
+
+.principal {
+  flex: 1;
+  background-color: #1c1c1c;
+  margin: 15px;
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
+}
+
+.logout {
+margin-top: auto;
+background-color: #333;
+border-radius: 8px;
+overflow: hidden;
+transition: background-color 0.3s;
+}
+
+.logout button {
+width: 100%;
+background: none;
+border: none;
+color: white;
+padding: 10px;
+font-size: 16px;
+display: flex;
+justify-content: center;   /* CENTRALIZA ícone + texto */
+align-items: center;
+gap: 8px;                  /* Espaço entre ícone e texto */
+cursor: pointer;
+}
+
+.logout button:hover {
+background-color: #444;
+}
+
+.logout button i {
+font-size: 20px;
+color: white;
+}
+

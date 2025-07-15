@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tela Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #dcdcdc;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+      background-color: #4d4d4d;
+      padding: 10px;
+    }
+
+    .sidebar {
+      background-color: #1e1e1e;
+      width: 80px;
+      border-radius: 10px;
+      padding: 10px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      border: 2px solid purple;
+    }
+
+    .sidebar .top-icons,
+    .sidebar .bottom-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .sidebar img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #ccc;
+    }
+
+    .line {
+      width: 25px;
+      height: 2px;
+      background-color: white;
+      margin: 5px 0;
+    }
+
+    .exit-icon {
+      font-size: 20px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .main {
+      flex: 1;
+      background-color: #1c1c1c;
+      margin-left: 15px;
+      border-radius: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Barra lateral -->
+    <div class="sidebar">
+      <div class="top-icons">
+        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Perfil">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+
+      <div class="bottom-icon">
+        <div class="exit-icon">&#x21B5;</div> <!-- Ícone de sair -->
+      </div>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div class="main">
+      <!-- Conteúdo vai aqui -->
+    </div>
+  </div>
+
+</body>
+</html>
