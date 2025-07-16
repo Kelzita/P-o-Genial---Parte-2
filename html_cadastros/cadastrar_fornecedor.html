@@ -8,86 +8,154 @@
     <!--==== Fontes do Google ====-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap">
     <!--==== CSS - EXTERNO ====-->
-    <link rel="stylesheet" href="#">
+    <link rel="stylesheet" href="../css/styleinicio.css".>
+    <link rel="stylesheet" href="../css/styleinputs.css"/>
     
 </head>
 <body>
-    <div class="#">     
-        <form class="#" action="#" method="post">
-            <h1>Cadastrar Fornecedor</h1>
-            <div class="#">
-                    <i class="ri-user-3-line login__icon"></i>
-                    <div class="#">
-                      <input name="nome_fornecedor" type="text" class="#" id="nome_fornecedor" placeholder=" ">
-                      <label for="nome_fornecedor" class="#">Fornecedor</label>
-                    </div>
-                  </div>
-                  <div class="#">
-                    <i class="ri-file-text-line"></i>
-                    <div class="#">
-                      <input name="cnpj" type="text" class="#" id="cnpj_fornecedor" placeholder=" ">
-                      <label for="cnpj" class="#">CNPJ</label>
-                    </div>
-                  </div>
+  <div class="lateral">
+    <div class="perfil">
+       
+      <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Perfil">
+    </div>
 
-                  <div class="#">
-                    <i class="ri-phone-line"></i>
-                    <div class="#">
-                      <input name="telefone" type="tel" class="#" id="telefone_fornecedor" placeholder=" ">
-                      <label for="telefone" class="#">Telefone</label>
-                </div>
-                <div class="#">
-                    <i class="ri-mail-line"></i>
-                    <div class="#">
-                      <input name="email" type="email" class="#" id="email_fornecedor" placeholder=" ">
-                      <label for="email" class="#">Email</label>
-                    </div>
-                  </div>
-                <div class="#">
-                    <i class="ri-map-pin-line"></i>
-                    <div class="#">
-                        <input name="cep" type="text" class="#" id="cep_fornecedor" placeholder=" ">
-                        <label for="cep" class="#">CEP</label>
-                </div>
-                <div class="#">
-                    <i class="ri-road-map-line"></i>
-                    <input name="rua" type="text" class="#" id="rua_fornecedor" placeholder=" ">
-                    <label for="rua" class="#">Rua</label>
-                  </div>
-                </div>
-                <div class="#">
-                    <i class="ri-home-2-line"></i>
-                  <div class="#">
-                    <input name="numero" type="text" class="#" id="numero_fornecedor" placeholder=" ">
-                    <label for="numero" class="#">Número</label>
-                  </div>
-                </div>
-                <div class="#">
-                    <i class="ri-community-line"></i>
-                  <div class="#">
-                    <input name="bairro" type="email" class="#" id="bairro_fornecedor" placeholder=" ">
-                    <label for="bairro" class="#">Bairro</label>
-                  </div>
-                </div>
-                <div class="#">
-                  <i class="ri-building-line"></i>
-                  <div class="#">
-                    <input name="cidade" type="tel" class="#" id="cidade_fornecedor" placeholder=" ">
-                    <label for="cidade" class="#">Cidade</label>
-              </div>
-              <div class="#">
-                <i class="ri-flag-line"></i> 
-                <select class="#">UF</select>
-              </div>
-         
-              </div>
-            </div>
-            
-        <div>
-                <button type="submit" class="botao-style" onclick="VerificarCampos()">Cadastrar Fornecedor</button>
-            </div>
-        </form>  
-</div>
+    <div class="menu">
+      <div class="menu-item">
+        <button>Histórico de Vendas</button>
+      </div>
+
+      <div class="menu-item">
+        <button>
+          Gestão de Produtos e Estoque
+          <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div class="submenu">
+          <a href="#">Cadastrar Produto</a>
+          <a href="#">Estoque Atual</a>
+          <a href="#">Gerenciar Produtos</a>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <button>
+          Gestão de Funcionários
+          <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div class="submenu">
+          <a href="#">Cadastrar Funcionários</a>
+          <a href="#">Lista de Funcionários</a>
+        </div>
+      </div>
+      <div class="menu-item">
+        <button>
+          Gestão de Fornecedores
+          <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div class="submenu">
+          <a href="#">Cadastrar Fornecedores</a>
+          <a href="#">Lista de Fornecedores</a>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <button>Relatório de Vendas</button>
+      </div>
+
+      <div class="menu-item">
+        <button>Caixa</button>
+      </div>
+
+      <div class="menu-item">
+        <button>Comanda</button>
+      </div>
+
+      <div class="logout">
+        <button>
+          <i class="ri-logout-box-r-line"></i>
+          Sair
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="principal">
+    <form action="#" method="post">
+      <h1>Cadastrar Fornecedor</h1>
+  
+      <div class="inputs-lado-a-lado">
+        <div class="form-group">
+          <i class="ri-user-3-line"></i>
+          <label for="nome_fornecedor">Fornecedor</label>
+          <input name="nome_fornecedor" type="text" class="input" id="nome_fornecedor" placeholder="Insira o nome">
+        </div>
+  
+        <div class="form-group">
+          <i class="ri-file-text-line"></i>
+          <label for="cnpj_fornecedor">CNPJ</label>
+          <input name="cnpj" type="text" class="input" id="cnpj_fornecedor" placeholder="Insira o CNPJ">
+        </div>
+  
+        <div class="form-group">
+          <i class="ri-phone-line"></i>
+          <label for="telefone_fornecedor">Telefone</label>
+          <input name="telefone" type="tel" class="input" id="telefone_fornecedor" placeholder="Insira o telefone">
+        </div>
+  
+        <div class="form-group">
+          <i class="ri-mail-line"></i>
+          <label for="email_fornecedor">Email</label>
+          <input name="email" type="email" class="input" id="email_fornecedor" placeholder="Insira o email">
+        </div>
+  
+        <div class="form-group">
+          <i class="ri-map-pin-line"></i>
+          <label for="cep_fornecedor">CEP</label>
+          <input name="cep" type="text" class="input" id="cep_fornecedor" placeholder="Insira o CEP">
+        </div>
+  
+        <div class="form-group">
+          <i class="ri-road-map-line"></i>
+          <label for="rua_fornecedor">Rua</label>
+          <input name="rua" type="text" class="input" id="rua_fornecedor" placeholder="Insira a rua">
+        </div>
+  
+        <div class="form-group">
+          <i class="ri-home-2-line"></i>
+          <label for="numero_fornecedor">Número</label>
+          <input name="numero" type="text" class="input" id="numero_fornecedor" placeholder="Insira o número">
+        </div>
+  
+        <div class="form-group">
+          <i class="ri-community-line"></i>
+          <label for="bairro_fornecedor">Bairro</label>
+          <input name="bairro" type="text" class="input" id="bairro_fornecedor" placeholder="Insira o bairro">
+        </div>
+  
+        <div class="form-group">
+          <i class="ri-building-line"></i>
+          <label for="cidade_fornecedor">Cidade</label>
+          <input name="cidade" type="text" class="input" id="cidade_fornecedor" placeholder="Insira a cidade">
+        </div>
+  
+        <div class="form-group">
+          <i class="ri-flag-line"></i>
+          <label for="uf_fornecedor">UF</label>
+          <select id="uf_fornecedor" name="uf" class="input">
+            <option selected>Escolha o Estado</option>
+          </select>
+        </div>
+      </div>
+  
+      <div>
+        <button type="submit" class="botao-style" onclick="VerificarCampos()">Cadastrar Fornecedor</button>
+      </div>
+    </form>
+  
+    <div>
+      <img class="background" src="../img/fundo1.jpg">
+    </div>
+  </div>
+  
     
 </body>
 </html>
