@@ -1,5 +1,5 @@
 <?php 
-request_once("conexao.php");
+require_once("conexao.php");
 
 $nome_fornecedor = $_POST['nome_fornecedor'];
 $CNPJ = $_POST['CNPJ'];
@@ -12,12 +12,13 @@ $bairro = $_POST['bairro'];
 $cidade = $_POST['cidade'];
 $UF = $_POST['UF'];
 
-$sql = "INSERT INTO fornecedores (nome_fornecedor, CNPJ, telefone, email, CEP, rua, numero, bairro, cidade, UF ) VALUES ( '$nome_fornecedor','$CNPJ','$telefone','$email','$CEP','$rua','$numero','$bairro','$cidade','$UF')";
+$sql = "INSERT INTO fornecedores (nome_fornecedor, CNPJ, telefone, email, CEP, rua, numero, bairro, cidade, UF )
+ VALUES ( '$nome_fornecedor','$CNPJ','$telefone','$email','$CEP','$rua','$numero','$bairro','$cidade','$UF')";
 
 if($conn->query($sql) === TRUE) {
     echo "<script>
        alert('Fornecedor Cadastrado com Sucesso!')
-    </script>"
+    </script>";
 } else {
 
     echo "<script>alert('Fornecedor não cadastrado');</script>";
