@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap">
   <link rel="stylesheet" href="../css/styleinputs.css">
-  <script src="../js/Função_Cep.js"></script>
   <title>Cadastrar Fornecedor</title>
   <style>
   </style>
@@ -113,8 +112,7 @@
           <input class="input" type="text" name="CEP" id='cep' maxlength="9" oninput="formatCEP(this)"
             onblur="buscarCEP(this.value)" required>
           <button type="button" class="btn-cep-inside"
-          
-            onclick="buscarCEP(document.getElementById('cep').value)"> <i class="ri-search-line"></i></button>
+            onclick="buscarCEP(document.getElementById('cep').value)">🔎</button>
         </div>
 
         <div class="input-group">
