@@ -15,6 +15,7 @@ $UF = $_POST['UF'];
 $sql = "INSERT INTO fornecedores (nome_fornecedor, CNPJ, telefone, email, CEP, rua, numero, bairro, cidade, UF )
  VALUES ( '$nome_fornecedor','$CNPJ','$telefone','$email','$CEP','$rua','$numero','$bairro','$cidade','$UF')";
 
+
 if($conn->query($sql) === TRUE) {
     echo "<script>
        alert('Fornecedor Cadastrado com Sucesso!')
