@@ -104,13 +104,31 @@
           <label for="validade" class="label">Validade</label>
           <input name="validade" type="date" class="input" id="validade">
         </div>
-        <div>
-          <select name="id_fornecedor" required>
 
-        </select>
+        <div class="input-group">
+          <i class="ri-truck-line"></i>
+          <label for="id_fornecedor" class="label">Fornecedor</label>
+          <select name="id_fornecedor" id="id_fornecedor" class="select-estilizado" required>
+            <option value="">Selecione o fornecedor</option>
+            <?php
+              require_once("../PHP/conexao.php");
+              $query = "SELECT id_fornecedor, nome_fornecedor FROM fornecedores";
+              $result = $conn->query($query);
+              while ($row = $result->fetch_assoc()) {
+                echo "<option value='" . $row['id_fornecedor'] . "'>" . $row['nome_fornecedor'] . "</option>";
+              }
+            ?>
+          </select>
 
         </div>
+        <div class="input-group">
+  <i class="ri-stack-line"></i>
+  <label for="id_estoque" class="label">Estoque</label>
+  <select name="id_estoque" id="id_estoque" class="select-estilizado" required>
+    <option value="1">1</option>
 
+  </select>
+</div>
       </div>
 
       <div>
