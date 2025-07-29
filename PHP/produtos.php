@@ -1,7 +1,7 @@
 <?php 
 require_once("conexao.php");
 $id_fornecedor = $_POST['id_fornecedor'];
-$id_estoque = $_POST['id_estoque']
+$id_estoque = $_POST['id_estoque'];
 $nome_produto = $_POST['nome_produto'];
 $preco = $_POST['preco'];
 $unmedida = $_POST['unmedida'];

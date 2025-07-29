@@ -7,8 +7,7 @@ import time
 
 driver = webdriver.Chrome()
 
-driver.get("http://localhost/P-o-Genial---Parte-2/html_cadastros/cadastrar_fornecedor.html")
-
+driver.get("http://localhost:8080/P-o-Genial---Parte-2/html_cadastros/cadastrar_fornecedor.html") # Trocar de acordo com o diretório! - 8080 ou 80 ( padão )
 # Preenchimento do Nome do Fornecedor
 
 nome_fornecedor_input = driver.find_element(By.ID, "nome_fornecedor")

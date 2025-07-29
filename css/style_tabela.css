@@ -1,0 +1,97 @@
+/* Container da Tabela */
+.tabela-container {
+    width: 100%;
+    max-width: 98%;
+    margin: 20px auto;
+    background: #1a1a1f;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo da Tabela */
+.tabela_fornecedor {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1a1a1f;
+    color: #eaeaea;
+    font-size: 0.82rem;
+    table-layout: fixed;
+    min-width: 900px;
+    
+}
+
+/* Cabeçalho */
+.tabela_fornecedor thead th {
+    background: #121217;
+    color: #f5f5f5;
+    padding: 12px 8px;
+    text-align: left;
+    font-weight: 500;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 2px solid #2a2a33;
+    white-space: nowrap;
+}
+
+/* Células */
+.tabela_fornecedor tbody td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #2a2a33;
+    vertical-align: middle;
+    word-break: break-word;
+    
+}
+
+/* Larguras das Colunas */
+.tabela_fornecedor th:nth-child(1),
+.tabela_fornecedor td:nth-child(1) { width: 15%; } /* Nome */
+.tabela_fornecedor th:nth-child(2),
+.tabela_fornecedor td:nth-child(2) { width: 18%; } /* CNPJ */
+.tabela_fornecedor th:nth-child(3),
+.tabela_fornecedor td:nth-child(3) { width: 15%; } /* Telefone */
+.tabela_fornecedor th:nth-child(4),
+.tabela_fornecedor td:nth-child(4) { width: 20%; } /* Email */
+.tabela_fornecedor th:nth-child(5),
+.tabela_fornecedor td:nth-child(5) { width: 8%; } /* CEP */
+.tabela_fornecedor th:nth-child(6),
+.tabela_fornecedor td:nth-child(6) { width: 15%; } /* Rua */
+.tabela_fornecedor th:nth-child(7),
+.tabela_fornecedor td:nth-child(7) { width: 5%; } /* Número */
+.tabela_fornecedor th:nth-child(8),
+.tabela_fornecedor td:nth-child(8) { width: 10%; } /* Bairro */
+.tabela_fornecedor th:nth-child(9),
+.tabela_fornecedor td:nth-child(9) { width: 8%; } /* Cidade */
+.tabela_fornecedor th:nth-child(10),
+.tabela_fornecedor td:nth-child(10) { width: 4%; } /* UF */
+.tabela_fornecedor th:nth-child(11),
+.tabela_fornecedor td:nth-child(11) { width: 8%; } /* Ações */
+
+/* Efeito Hover */
+.tabela_fornecedor tbody tr:hover td {
+    background: #2a2a33;
+}
+
+/* Ações */
+.tabela_fornecedor td:last-child {
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+/* Barra de Rolagem */
+.tabela-container::-webkit-scrollbar {
+    height: 6px;
+    background: transparent;
+}
+
+.tabela-container::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 3px;
+}
+
+.ri-edit-line {
+    font-size: 20px;
+}
+.ri-close-circle-line {
+    font-size: 20px;
+}

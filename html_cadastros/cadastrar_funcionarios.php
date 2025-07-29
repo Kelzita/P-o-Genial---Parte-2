@@ -87,6 +87,7 @@
           <input name="nome_funcionario" type="text" class="input" id="nome_funcionario" placeholder="Nome completo">
         </div>
 
+
         <div class="input-group">
           <i class="ri-file-user-line"></i>
           <label for="cpf" class="label">CPF</label>
@@ -143,6 +144,7 @@
           <label for="uf" class="label">UF</label>
           <select id="uf" name="UF" class="input">
             <option selected>Escolha o Estado</option>
+            <option>SC</option>
           </select>
         </div>
 
@@ -157,20 +159,46 @@
           <label for="salario" class="label">Salário</label>
           <input name="salario" type="number" step="0.01" class="input" id="salario" placeholder="R$ 0,00">
         </div>
+      <!--   <div class="input-group">
+          <i class="ri-user-3-line"></i>
+          <label class="label">Gênero</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="genero" value="masculino"> Masculino
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="genero" value="feminino"> Feminino
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="genero" value="outro"> Outro
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="genero" value="prefiro_nao_dizer"> Prefiro não dizer
+            </label>
+          </div>
+        </div>-->
 
         <div class="input-group">
           <i class="ri-id-card-line"></i>
-          <label for="id_funcao" class="label">ID Função</label>
-          <input name="id_funcao" type="number" class="input" id="id_funcao" placeholder="Informe o ID da função">
+          <label for="id_funcao" class="label"> Função</label>
+          <select name="id_funcao" class="input" id="id_funcao">
+            <option selected>Selecione a Função</option>
+             <?php
+            require_once("../PHP/conexao.php");
+            $query = "SELECT id_funcao, nome_funcao FROM funcao";
+              $result = $conn->query($query);
+              while ($row = $result->fetch_assoc()) {
+             echo "<option value='" . $row['id_funcao'] . "'>" . $row['nome_funcao'] . "</option>";
+            }
+         ?>
+        </select>
         </div>
-
-        <div class="input-group">
+       <!-- <div class="input-group">
           <i class="ri-user-settings-line"></i>
           <label for="id_usuario" class="label">ID Usuário</label>
           <input name="id_usuario" type="number" class="input" id="id_usuario" placeholder="Informe o ID do usuário">
         </div>
-      </div>
-
+      </div> -->
       <div>
         <button type="submit" class="botao-style">Cadastrar Funcionário</button>
       </div>
