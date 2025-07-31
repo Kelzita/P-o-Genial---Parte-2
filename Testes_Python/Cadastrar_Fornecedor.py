@@ -7,7 +7,7 @@ import time
 
 driver = webdriver.Chrome()
 
-driver.get("http://localhost/P-o-Genial---Parte-2/html_cadastros/cadastrar_fornecedor.html")
+driver.get("http://localhost:8080/P-o-Genial---Parte-2/html_cadastros/cadastrar_fornecedor.html")
 
 # Preenchimento do Nome do Fornecedor
 
