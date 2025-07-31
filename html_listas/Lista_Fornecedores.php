@@ -1,35 +1,20 @@
 <?php 
 session_start();
 include "../PHP/conexao.php";
+include "../PHP/Listas/lista_fornecedores.php";
 
-$lista_fornecedores = buscar_tarefas($conn); 
-
-if(isset($_POST['nome_fornecedor']) && $_POST['nome_fornecedor'] != '') {
-   $fornecedores = array();
-
-   $fornecedores['nome_fornecedor'] = $_POST['nome_fornecedor']; 
-   $fornecedores['CNPJ'] = $_POST['CNPJ'] ?? '';
-   $fornecedores['telefone'] = $_POST['telefone'] ?? '';
-   $fornecedores['email'] = $_POST['email'] ?? '';
-   $fornecedores['CEP'] = $_POST['cep'] ?? '';
-   $fornecedores['rua'] = $_POST['rua'] ?? '';
-   $fornecedores['numero'] = $_POST['numero'] ?? ''; 
-   $fornecedores['bairro'] = $_POST['bairro'] ?? '';
-   $fornecedores['cidade'] = $_POST['cidade'] ?? '';
-   $fornecedores['UF'] = $_POST['UF'] ?? '';
+function formatCnpj($cnpj) {
+  return preg_replace('/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/', '$1.$2.$3/$4-$5', $cnpj);
 }
 
-function buscar_tarefas($conn) {
-  $sqlBusca = 'SELECT * FROM fornecedores';
-  $resultado = mysqli_query($conn, $sqlBusca);
-  $lista = array();
-  while ($fornecedores = mysqli_fetch_assoc($resultado)) {
-      $lista[] = $fornecedores; 
-  }
-  return $lista;
+function formatPhone($phone) {
+  return preg_replace('/(\d{2})(\d{5})(\d{4})/', '($1) $2-$3', $phone);
+}
+
+function formatCep($cep) {
+  return preg_replace('/(\d{5})(\d{3})/', '$1-$2', $cep);
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="PT-BR">
@@ -110,40 +95,46 @@ function buscar_tarefas($conn) {
     
     
       <div class="principal">
-        <h1>Lista de Fornecedores</h1>
-      <div class="tabela-container">
-        <table style="border-bottom: 1px solid #333;" class="tabela_fornecedor">
-        <tr>
-            <th>Nome do Fornecedor</th>
-            <th>CNPJ</th>
-            <th>Telefone</th>
-            <th>Email</th>
-            <th>CEP</th>
-            <th>Rua</th>
-            <th>Número</th>
-            <th>Bairro</th>
-            <th>Cidade</th>
-            <th>UF</th>
-            <th>Ações</th>
-        </tr>
-
-        <?php foreach ($lista_fornecedores as $fornecedores) : ?>
-        <tr>
-           <td><?php echo $fornecedores['nome_fornecedor']; ?></td>
-           <td><?php echo $fornecedores['CNPJ']; ?></td>
-           <td><?php echo $fornecedores['telefone']; ?></td>
-           <td><?php echo $fornecedores['email']; ?></td>
-           <td><?php echo $fornecedores['cep']; ?></td>
-           <td><?php echo $fornecedores['rua']; ?></td>
-           <td><?php echo $fornecedores['numero']; ?></td>
-           <td><?php echo $fornecedores['bairro']; ?></td>
-           <td><?php echo $fornecedores['cidade']; ?></td>
-           <td><?php echo $fornecedores['UF']; ?></td>
-           <td>Editar / Inativar</td>
-        </tr>
-            <?php endforeach; ?>
+    <h1>Lista de Fornecedores</h1>
+    <div class="tabela-container">
+        <table class="tabela_fornecedor">
+            <thead>
+                <tr>
+                    <th>Nome Fornecedor</th>
+                    <th>CNPJ</th>
+                    <th>Telefone</th>
+                    <th>Email</th>
+                    <th>CEP</th>
+                    <th>Rua</th>
+                    <th>Número</th>
+                    <th>Bairro</th>
+                    <th>Cidade</th>
+                    <th>UF</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($lista_fornecedores as $fornecedores) : ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($fornecedores['nome_fornecedor']); ?></td>
+                    <td><?php echo formatCnpj($fornecedores['CNPJ']); ?></td>
+                    <td><?php echo formatPhone($fornecedores['telefone']); ?></td>
+                    <td><?php echo htmlspecialchars(substr($fornecedores['email'], 0, 15)) . '...'; ?></td>
+                    <td><?php echo formatCep($fornecedores['cep']); ?></td>
+                    <td><?php echo htmlspecialchars($fornecedores['rua']); ?></td>
+                    <td><?php echo htmlspecialchars($fornecedores['numero']); ?></td>
+                    <td><?php echo htmlspecialchars($fornecedores['bairro']); ?></td>
+                    <td><?php echo htmlspecialchars($fornecedores['cidade']); ?></td>
+                    <td><?php echo htmlspecialchars($fornecedores['UF']); ?></td>
+                    <td>
+                        <i class="ri-edit-line"></i>
+                        <i class="ri-close-circle-line"></i>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
         </table>
-      </div>
-  </div>
+    </div>
+</div>
 </body>
 </html>
