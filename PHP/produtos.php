@@ -12,8 +12,9 @@ $sql = "INSERT INTO produto (id_fornecedor, id_estoque, nome_produto, preco, unm
 
 if($conn->query($sql) === TRUE) {
     echo "<script>
-        alert('Produto Cadastrado com Sucesso!')
-    </script>";
+       alert('Produto Cadastrado com Sucesso!');
+       window.location.href = '../html_cadastros/cadastrar_produtos.php';
+    </script>;"
 } else {
     echo "<script>alert('Produto não cadastrado');</script>";
 }

@@ -18,7 +18,8 @@ $sql = "INSERT INTO fornecedores (nome_fornecedor, CNPJ, telefone, email, CEP, r
 
 if($conn->query($sql) === TRUE) {
     echo "<script>
-       alert('Fornecedor Cadastrado com Sucesso!')
+       alert('Fornecedor Cadastrado com Sucesso!');
+       window.location.href = '../html_cadastros/cadastrar_fornecedor.html';
     </script>";
 } else {
 
